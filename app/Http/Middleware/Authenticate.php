@@ -21,7 +21,7 @@ class Authenticate extends Middleware
                 
                 return \route('admin.login');
             else
-                 return route('login');
+                 return route('admin.login');
 
         }
     }
