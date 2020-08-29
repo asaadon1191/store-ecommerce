@@ -1,4 +1,7 @@
 @extends('layouts.login')
+@section('title')
+    {{ __('admin/login.admin login') }}
+@endsection
 @section('content')
 <div class="app-content content">
     <div class="content-wrapper">
@@ -12,12 +15,12 @@
                             <div class="card-header border-0">
                                 <div class="card-title text-center">
                                     <div class="p-1">
-                                    <img src="{{ asset('assets/front/images/logo.png') }}" alt="LOGO"/>
+                                    <img src="{{ asset('assets/images/logo.png') }}" alt="LOGO"/>
 
                                     </div>
                                 </div>
                                 <h6 class="card-subtitle line-on-side text-muted text-center font-small-3 pt-2">
-                                    <span>الدخول للوحة التحكم </span>
+                                    <h1 class="text-center">{{ __('admin/login.admin login') }} </h1>
                                 </h6>
                             </div>
 
@@ -58,13 +61,13 @@
                                                 <fieldset>
                                                     <input type="checkbox" name="remember_me" id="remember-me"
                                                            class="chk-remember">
-                                                    <label for="remember-me">تذكر دخولي</label>
+                                                    <label for="remember-me">{{ __('admin/login.remmber me') }}</label>
                                                 </fieldset>
                                             </div>
                                         </div>
                                         <button type="submit" class="btn btn-info btn-lg btn-block"><i
                                                 class="ft-unlock"></i>
-                                            دخول
+                                                {{ __('admin/login.login') }}
                                         </button>
                                     </form>
                                 </div>

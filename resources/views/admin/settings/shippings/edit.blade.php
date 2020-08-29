@@ -50,13 +50,25 @@
 
                             <div class="card-content collapse show">
                                 <div class="card-body">
+
+
+
+
+
+
+
+
+
                                     <form class="form" action="{{ route('update.shipping.Methods',$data->id) }}"
-                                          method="PUT"
+                                          method="post"
                                           enctype="multipart/form-data">
                                         @csrf
                                         @method('PUT')
 
-                                        <input type="hidden" name="id" value="">
+
+                                        
+
+                                        <input type="hidden" name="id" value="{{ $data->id }}">
                                         <div class="form-body">
 
                                             <h4 class="form-section"><i class="ft-home"></i> بيانات وسيلة التوصيل </h4>
@@ -68,63 +80,41 @@
                                                             <label for="projectinput1"> الاسم </label>
                                                             <input type="text" value="{{ $data->value }}" id="name"
                                                                 class="form-control"
-                                                                placeholder="  "
-                                                                name="name">
-                                                            @error("name")
+                                                                name="value">
+                                                            @error("value")
                                                                 <span class="text-danger">{{$message}}</span>
                                                             @enderror
                                                         </div>
                                                     </div>
                                                     <div class="col-md-6 ">
                                                         <div class="form-group">
-                                                            <label for="projectinput1"> العنوان  </label>
-                                                            <input type="text" id="pac-input"
+                                                            <label for="projectinput1"> قيمة التوصيل  </label>
+                                                            <input type="number" id="pac-input"
                                                                    class="form-control"
-                                                                   placeholder="  " name="address"
-                                                                   value=""
+                                                                   name="plain_value"
+                                                                   value="{{ $data->plain_value }}"
                                                             >
     
-                                                            @error("address")
+                                                            @error("value")
                                                             <span class="text-danger"> {{$message}}</span>
                                                             @enderror
                                                         </div>
                                                     </div>
                                                 </div>
-                                                <div class="row">
-                                                    <div class="col-md-6">
-                                                        <div class="form-group mt-1">
-                                                            <input type="checkbox" value="1"
-                                                                   name="active"
-                                                                   id="switcheryColor4"
-                                                                   class="switchery" data-color="success"
-                                                                   {{--  @if($vendor -> active == 1)checked @endif/>  --}}
-                                                            <label for="switcheryColor4"
-                                                                   class="card-title ml-1">الحالة </label>
-    
-                                                            @error("active")
-                                                            <span class="text-danger"> </span>
-                                                            @enderror
-                                                        </div>
-                                                    </div>
-                                                </div>
+                                                
                                             </div>
-
-                                          
-
+                                            <div class="form-actions">
+                                                <button type="button" class="btn btn-warning mr-1"
+                                                        onclick="history.back();">
+                                                    <i class="ft-x"></i> تراجع
+                                                </button>
+                                                <button type="submit" class="btn btn-primary">
+                                                    <i class="la la-check-square-o"></i> حفظ
+                                                </button>
+                                            </div>
                                         </div>
 
-
-                                        <div id="map" style="height: 500px;width: 1000px;"></div>
-
-                                        <div class="form-actions">
-                                            <button type="button" class="btn btn-warning mr-1"
-                                                    onclick="history.back();">
-                                                <i class="ft-x"></i> تراجع
-                                            </button>
-                                            <button type="submit" class="btn btn-primary">
-                                                <i class="la la-check-square-o"></i> حفظ
-                                            </button>
-                                        </div>
+                                      
                                     </form>
                                 </div>
                             </div>

@@ -20,6 +20,7 @@ Route::group(['prefix' => LaravelLocalization::setLocale(),'middleware' => [ 'lo
     Route::middleware('auth:admin')->namespace('Admin')->prefix('admin')->group(function()
     {
         Route::get('Dashboard','DashboardController@index')->name('Dashboard');
+        Route::get('logout','LoginController@logout')->name('admin.logout');
 
     //  SETTINGS ROUTS
         Route::prefix('setting')->group(function()
@@ -29,9 +30,10 @@ Route::group(['prefix' => LaravelLocalization::setLocale(),'middleware' => [ 'lo
         });
     });
 
+    // #####################################################################################################
+
     Route::namespace('Admin')->middleware('guest:admin')->prefix('admin')->group(function()
     {
-    
         Route::get('/login','LoginController@loginForm')->name('admin.login'); 
         Route::post('/makelogin','LoginController@login')->name('admin.MakeLogin'); 
     });

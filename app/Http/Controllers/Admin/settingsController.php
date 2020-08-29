@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Admin;
 use App\Models\Setting;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
+use App\Http\Requests\ShippingRequest;
 
 class settingsController extends Controller
 {
@@ -32,8 +33,34 @@ class settingsController extends Controller
         return \view('admin.settings.shippings.edit',\compact('data'));
     }
 
-    public function updateMethod($id,Request $request)
+    public function updateMethod($id,ShippingRequest $request)
     {
-        
+        try 
+        {
+             // return $request;
+            $data = Setting::find($id);
+            // return $data;
+            
+            DB::beginTransaction();
+            
+            $update = $data->update(
+                [
+                    'plain_value'   => $request->plain_value,
+                ]);
+
+            $data->value = $request->value;
+            $data->save();
+                    
+            DB::commit();
+                    
+            return \redirect()->back()->with(['success' => 'تم تعديل وسيلة التوصيل بنجاح']);
+        } 
+        catch (\Throwable $th) 
+        {
+            return \redirect()->back()->with(['error' => 'هناك خطا ما برجاء المحاولة فيما بعد']);
+            DB::rollback();
+            
+        }
+       
     }
 }
