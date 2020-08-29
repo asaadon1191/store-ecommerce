@@ -26,4 +26,11 @@ class LoginController extends Controller
         }
         return back()->with(['error' => 'البيانت غير صحيحة']);
     }
+
+
+    public function logout()
+    {
+        \auth('admin')->logout();
+        return \redirect()->route('admin.login');
+    }
 }

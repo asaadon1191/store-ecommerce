@@ -6,7 +6,7 @@
                         class="menu-title" data-i18n="nav.add_on_drag_drop.main">الرئيسية </span></a>
             </li>
 
-            <li class="nav-item  open ">
+            {{--  <li class="nav-item  open ">
                 <a href=""><i class="la la-home"></i>
                     <span class="menu-title" data-i18n="nav.dash.main">لغات الموقع </span>
                     <span
@@ -100,7 +100,7 @@
                                           data-i18n="nav.dash.ecommerce"> تذاكر الطلاب </a>
                     </li>
                 </ul>
-            </li>
+            </li>  --}}
 
 
             <li class=" nav-item"><a href="#"><i class="la la-television"></i><span class="menu-title"
@@ -124,7 +124,7 @@
                         </ul>
                     </li>
                     
-                    <li><a class="menu-item" href="#" data-i18n="nav.templates.horz.main">Horizontal</a>
+                    {{--  <li><a class="menu-item" href="#" data-i18n="nav.templates.horz.main">Horizontal</a>
                         <ul class="menu-content">
                             <li><a class="menu-item" href="../horizontal-menu-template"
                                    data-i18n="nav.templates.horz.classic">Classic</a>
@@ -133,10 +133,10 @@
                                    data-i18n="nav.templates.horz.top_icon">Full Width</a>
                             </li>
                         </ul>
-                    </li>
+                    </li>  --}}
                 </ul>
             </li>
-            <li class=" navigation-header">
+            {{--  <li class=" navigation-header">
                 <span data-i18n="nav.category.layouts">Layouts</span><i class="la la-ellipsis-h ft-minus"
                                                                         data-toggle="tooltip"
                                                                         data-placement="right"
@@ -412,8 +412,8 @@
                                                                         data-toggle="tooltip"
                                                                         data-placement="right"
                                                                         data-original-title="General"></i>
-            </li>
-            <li class=" nav-item"><a href="#"><i class="la la-paint-brush"></i><span class="menu-title"
+            </li>  --}}
+            {{--  <li class=" nav-item"><a href="#"><i class="la la-paint-brush"></i><span class="menu-title"
                                                                                      data-i18n="nav.color_palette.main">Color Palette</span></a>
                 <ul class="menu-content">
                     <li><a class="menu-item" href="color-palette-primary.html"
@@ -601,8 +601,8 @@
             <li class=" nav-item"><a href="scrumboard.html"><i class="la la-check-square"></i><span class="menu-title"
                                                                                                     data-i18n="nav.scrumboard.main">Scrumboard</span><span
                         class="badge badge badge-info float-right">Update</span></a>
-            </li>
-            <li class=" nav-item"><a href="#"><i class="la la-clipboard"></i><span class="menu-title"
+            </li>  --}}
+            {{--  <li class=" nav-item"><a href="#"><i class="la la-clipboard"></i><span class="menu-title"
                                                                                    data-i18n="nav.invoice.main">Invoice</span></a>
                 <ul class="menu-content">
                     <li><a class="menu-item" href="invoice-summary.html" data-i18n="nav.invoice.invoice_summary">Invoice
@@ -1058,8 +1058,8 @@
                            data-i18n="nav.form_wizard.form_wizard_notification_style">Notification Style</a>
                     </li>
                 </ul>
-            </li>
-            <li class=" nav-item"><a href="form-repeater.html"><i class="la la-repeat"></i><span class="menu-title"
+            </li>  --}}
+            {{--  <li class=" nav-item"><a href="form-repeater.html"><i class="la la-repeat"></i><span class="menu-title"
                                                                                                  data-i18n="nav.form_repeater.main">Form Repeater</span></a>
             </li>
             <li class=" navigation-header">
@@ -1551,13 +1551,8 @@
             </li>
             <li class=" nav-item"><a href="http://support.pixinvent.com/"><i class="la la-support"></i><span
                         class="menu-title" data-i18n="nav.support_raise_support.main">Raise Support</span></a>
-            </li>
-            <li class=" nav-item">
-                <a href="https://pixinvent.com/modern-admin-clean-bootstrap-4-dashboard-html-template/documentation"><i
-                        class="la la-text-height"></i>
-                    <span class="menu-title" data-i18n="nav.support_documentation.main">Documentation</span>
-                </a>
-            </li>
+            </li>  --}}
+           
         </ul>
     </div>
 </div>
