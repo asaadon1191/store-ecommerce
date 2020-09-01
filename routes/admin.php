@@ -28,6 +28,22 @@ Route::group(['prefix' => LaravelLocalization::setLocale(),'middleware' => [ 'lo
             Route::get('shipping-methods/{type}','settingsController@editMethod')->name('shipping.Methods');
             Route::put('shipping-methods/{id}','settingsController@updateMethod')->name('update.shipping.Methods');
         });
+
+    //  PROFILE ROUTS
+        Route::prefix('profile')->group(function()
+        {
+            Route::get('edit','ProfileController@getProfile')->name('edit.profile');
+            Route::put('update','ProfileController@updateProfile')->name('update.profile');
+            
+        });
+
+    //  CATEGORY ROUTS
+        Route::prefix('category')->group(function()
+        {
+            Route::get('edit','ProfileController@getProfile')->name('edit.profile');
+            Route::put('update','ProfileController@updateProfile')->name('update.profile');
+            
+        });
     });
 
     // #####################################################################################################

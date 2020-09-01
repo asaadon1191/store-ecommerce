@@ -8,7 +8,7 @@ use Astrotomic\Translatable\Translatable;
 class Setting extends Model
 {
     use Translatable;
-
+    //TO CALL TRANSLATIONS DATA WITH REQUEST
     protected $with = ['translations'];
 
     protected $fillable = 

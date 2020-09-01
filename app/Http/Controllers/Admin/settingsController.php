@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Admin;
 
 use App\Models\Setting;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 use App\Http\Controllers\Controller;
 use App\Http\Requests\ShippingRequest;
 
@@ -57,6 +58,7 @@ class settingsController extends Controller
         } 
         catch (\Throwable $th) 
         {
+            return $th;
             return \redirect()->back()->with(['error' => 'هناك خطا ما برجاء المحاولة فيما بعد']);
             DB::rollback();
             

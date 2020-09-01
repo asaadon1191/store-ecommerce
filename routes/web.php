@@ -18,3 +18,10 @@ Route::get('/', function () {
 });
 
 
+Route::get('/test', function () {
+    return \App\Models\Setting::find(74);
+});
+
+
+
+
