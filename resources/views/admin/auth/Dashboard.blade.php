@@ -20,7 +20,7 @@
                                         <h1><i class="cc BTC warning font-large-2" title="BTC"></i></h1>
                                     </div>
                                     <div class="col-5 pl-2">
-                                        <h4>اجمالي المبيعات</h4>
+                                        <h4>{{ __('admin/dahsboard.Total Sales') }}</h4>
                                         
                                     </div>
                                     <div class="col-5 text-right">
@@ -46,7 +46,7 @@
                                         <h1><i class="cc ETH blue-grey lighten-1 font-large-2" title="ETH"></i></h1>
                                     </div>
                                     <div class="col-5 pl-2">
-                                        <h4>اجمالي الطلبات</h4>
+                                        <h4>{{ __('admin/dahsboard.Total Orders') }}</h4>
                                         
                                     </div>
                                     <div class="col-5 text-right">
@@ -72,7 +72,7 @@
                                         <h1><i class="cc XRP info font-large-2" title="XRP"></i></h1>
                                     </div>
                                     <div class="col-5 pl-2">
-                                        <h4>عدد المنتجات</h4>
+                                        <h4>{{ __('admin/dahsboard.Number of products') }}</h4>
                                        
                                     </div>
                                     <div class="col-5 text-right">
@@ -98,7 +98,7 @@
                                         <h1><i class="cc XRP info font-large-2" title="XRP"></i></h1>
                                     </div>
                                     <div class="col-5 pl-2">
-                                        <h4>عدد العملاء</h4>
+                                        <h4>{{ __('admin/dahsboard.Number of Clients') }}</h4>
                                       
                                     </div>
                                     <div class="col-5 text-right">
@@ -123,7 +123,7 @@
                 <div class="col-12 col-xl-6">
                     <div class="card">
                         <div class="card-header">
-                            <h4 class="card-title">اخر الطلبات</h4>
+                            <h4 class="card-title">{{ __('admin/dahsboard.Last Orders') }}</h4>
                             <a class="heading-elements-toggle"><i class="la la-ellipsis-v font-medium-3"></i></a>
                             <div class="heading-elements">
                                 <p class="text-muted">Total BTC available: 6542.56585</p>
@@ -134,10 +134,11 @@
                                 <table class="table table-de mb-0">
                                     <thead>
                                     <tr>
-                                        <th>رقم الطلب</th>
-                                        <th>العميل</th>
-                                        <th>اجمالي السعر</th>
-                                        <th>حالة الطلب</th>
+                                        <th>{{ __('admin/dahsboard.Order Number') }}</th>
+                                        <th>{{ __('admin/dahsboard.Client') }}</th>
+                                        <th>{{ __('admin/dahsboard.Total Prices') }}</th>
+                                        <th>{{ __('admin/dahsboard.Order Status') }}</th>
+                                        
                                         
                                     </tr>
                                     </thead>
@@ -156,7 +157,7 @@
                 <div class="col-12 col-xl-6">
                     <div class="card">
                         <div class="card-header">
-                            <h4 class="card-title">اخر التعليفات</h4>
+                            <h4 class="card-title">{{ __('admin/dahsboard.Last Comments') }}</h4>
                             <a class="heading-elements-toggle"><i class="la la-ellipsis-v font-medium-3"></i></a>
                             <div class="heading-elements">
                                 <p class="text-muted">Total USD available: 9065930.43</p>
@@ -167,9 +168,9 @@
                                 <table class="table table-de mb-0">
                                     <thead>
                                     <tr>
-                                        <th>العميل </th>
-                                        <th>{{__('trans_ar.Product')}}</th>
-                                        <th>التقيم</th>
+                                        <th>{{ __('admin/dahsboard.Client') }} </th>
+                                        <th>{{ __('admin/dahsboard.Product Name') }}</th>
+                                        <th>{{ __('admin/dahsboard.Rate') }}</th>
                                     </tr>
                                     </thead>
                                     <tbody>
