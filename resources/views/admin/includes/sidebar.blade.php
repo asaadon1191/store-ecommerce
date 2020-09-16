@@ -3,7 +3,7 @@
         <ul class="navigation navigation-main" id="main-menu-navigation" data-menu="menu-navigation">
 
             <li class="nav-item active"><a href=""><i class="la la-mouse-pointer"></i><span
-                        class="menu-title" data-i18n="nav.add_on_drag_drop.main">الرئيسية </span></a>
+                        class="menu-title" data-i18n="nav.add_on_drag_drop.main">{{ __('admin/sidebar.Dashboard') }} </span></a>
             </li>
 
             {{--  <li class="nav-item  open ">
@@ -24,40 +24,44 @@
                             </a>
                     </li>
                 </ul>
-            </li>
+            </li> --}}
 
 
             <li class="nav-item"><a href=""><i class="la la-group"></i>
-                    <span class="menu-title" data-i18n="nav.dash.main">الاقسام الرئيسيه </span>
-                    <span
-                        class="badge badge badge-danger badge-pill float-right mr-2"></span>
+                    <span class="menu-title" data-i18n="nav.dash.main">{{ __('admin/sidebar.Categories') }}</span>
+                    <span class="badge badge badge-danger badge-pill float-right mr-2">
+                        {{ App\Models\Category::parient()->get()->count() }}
+                     </span>
                 </a>
                 <ul class="menu-content">
-                    <li class="active"><a class="menu-item" href="#"
-                                          data-i18n="nav.dash.ecommerce"> عرض الكل </a>
+                    <li class="active"><a class="menu-item" href="{{ route('Categories') }}"
+                                          data-i18n="nav.dash.ecommerce"> {{ __('admin/sidebar.Show All') }} </a>
                     </li>
-                    <li><a class="menu-item" href="#" data-i18n="nav.dash.crypto">أضافة
-                             قسم جديد </a>
+                    <li><a class="menu-item" href="{{ route('create.Categories') }}" data-i18n="nav.dash.crypto">{{ __('admin/sidebar.Create New Category') }}  </a>
+                              
                     </li>
                 </ul>
             </li>
 
             <li class="nav-item"><a href=""><i class="la la-group"></i>
-                    <span class="menu-title" data-i18n="nav.dash.main">الاقسام الفرعية   </span>
-                    <span
-                        class="badge badge badge-danger badge-pill float-right mr-2">400</span>
+                    <span class="menu-title" data-i18n="nav.dash.main">{{ __('admin/sidebar.SubCategories') }}</span>
+                    <span class="badge badge badge-danger badge-pill float-right mr-2">
+                        {{ App\Models\Category::child()->get()->count() }}
+                     </span>
                 </a>
                 <ul class="menu-content">
-                    <li class="active"><a class="menu-item" href="#"
-                                          data-i18n="nav.dash.ecommerce"> عرض الكل </a>
+                    <li class="active"><a class="menu-item" href="{{ route('SubCategory') }}"
+                                          data-i18n="nav.dash.ecommerce"> {{ __('admin/sidebar.Show All') }} </a>
                     </li>
-                    <li><a class="menu-item" href="#" data-i18n="nav.dash.crypto">أضافة
-                            قسم فرعي جديد </a>
+                    <li><a class="menu-item" href="{{ route('create.SubCategory') }}" data-i18n="nav.dash.crypto">{{ __('admin/sidebar.Create New Sub Category') }}  </a>
+                              
                     </li>
                 </ul>
             </li>
 
-            <li class="nav-item"><a href=""><i class="la la-male"></i>
+       
+
+            {{-- <li class="nav-item"><a href=""><i class="la la-male"></i>
                     <span class="menu-title" data-i18n="nav.dash.main">المتاجر  </span>
                     <span
                         class="badge badge badge-success badge-pill float-right mr-2"></span>
@@ -86,10 +90,10 @@
                             طالب </a>
                     </li>
                 </ul>
-            </li>
+            </li> --}}
 
 
-            <li class="nav-item">
+            {{-- <li class="nav-item">
                 <a href=""><i class="la la-male"></i>
                     <span class="menu-title" data-i18n="nav.dash.main">تذاكر المراسلات   </span>
                     <span
@@ -100,7 +104,7 @@
                                           data-i18n="nav.dash.ecommerce"> تذاكر الطلاب </a>
                     </li>
                 </ul>
-            </li>  --}}
+            </li>   --}}
 
 
             <li class=" nav-item"><a href="#"><i class="la la-television"></i><span class="menu-title"
