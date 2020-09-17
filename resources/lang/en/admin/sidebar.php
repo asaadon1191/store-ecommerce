@@ -14,4 +14,6 @@ return
     'Create New Category'       => 'Create New Category',
     'Create New Sub Category'   => 'Create New Sub Category',
     'Show All'                  => 'Show All',
+    'Brands'                    => 'Brands',
+    'Create New Brand'          => 'Create New Brand',
 ];

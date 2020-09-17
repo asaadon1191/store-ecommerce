@@ -6,26 +6,6 @@
                         class="menu-title" data-i18n="nav.add_on_drag_drop.main">{{ __('admin/sidebar.Dashboard') }} </span></a>
             </li>
 
-            {{--  <li class="nav-item  open ">
-                <a href=""><i class="la la-home"></i>
-                    <span class="menu-title" data-i18n="nav.dash.main">لغات الموقع </span>
-                    <span
-                        class="badge badge badge-info badge-pill float-right mr-2"></span>
-                </a>
-                <ul class="menu-content">
-                    <li class="active">
-                            <a class="menu-item" href="#"
-                                   data-i18n="nav.dash.ecommerce"> عرض الكل 
-                            </a>
-                    </li>
-                    <li>
-                            <a class="menu-item" href="#" data-i18n="nav.dash.crypto">أضافة
-                            لغة جديده 
-                            </a>
-                    </li>
-                </ul>
-            </li> --}}
-
 
             <li class="nav-item"><a href=""><i class="la la-group"></i>
                     <span class="menu-title" data-i18n="nav.dash.main">{{ __('admin/sidebar.Categories') }}</span>
@@ -34,7 +14,7 @@
                      </span>
                 </a>
                 <ul class="menu-content">
-                    <li class="active"><a class="menu-item" href="{{ route('Categories') }}"
+                    <li class=""><a class="menu-item" href="{{ route('Categories') }}"
                                           data-i18n="nav.dash.ecommerce"> {{ __('admin/sidebar.Show All') }} </a>
                     </li>
                     <li><a class="menu-item" href="{{ route('create.Categories') }}" data-i18n="nav.dash.crypto">{{ __('admin/sidebar.Create New Category') }}  </a>
@@ -50,34 +30,38 @@
                      </span>
                 </a>
                 <ul class="menu-content">
-                    <li class="active"><a class="menu-item" href="{{ route('SubCategory') }}"
+                    <li class=""><a class="menu-item" href="{{ route('SubCategory') }}"
                                           data-i18n="nav.dash.ecommerce"> {{ __('admin/sidebar.Show All') }} </a>
                     </li>
-                    <li><a class="menu-item" href="{{ route('create.SubCategory') }}" data-i18n="nav.dash.crypto">{{ __('admin/sidebar.Create New Sub Category') }}  </a>
-                              
+                    <li><a class="menu-item" href="{{ route('create.SubCategory') }}" data-i18n="nav.dash.crypto">{{ __('admin/sidebar.Create New Sub Category') }}  </a>      
                     </li>
                 </ul>
             </li>
 
        
 
-            {{-- <li class="nav-item"><a href=""><i class="la la-male"></i>
-                    <span class="menu-title" data-i18n="nav.dash.main">المتاجر  </span>
-                    <span
-                        class="badge badge badge-success badge-pill float-right mr-2"></span>
+             <li class="nav-item"><a href=""><i class="la la-male"></i>
+                    <span class="menu-title" data-i18n="nav.dash.main">{{ __('admin/sidebar.Brands') }}  </span>
+                    <span class="badge badge badge-success badge-pill float-right mr-2">
+                            {{ App\Models\Brand::all()->count() }}
+                     </span>
                 </a>
                 <ul class="menu-content">
-                    <li class="active"><a class="menu-item" href="#"
-                                          data-i18n="nav.dash.ecommerce"> عرض الكل </a>
+                    <li class="">
+                           <a class="menu-item" href="{{ route('brands') }}" data-i18n="nav.dash.ecommerce"> 
+                                   عرض الكل 
+                            </a>
                     </li>
-                    <li><a class="menu-item" href="#" data-i18n="nav.dash.crypto">أضافة
-                            متجر  </a>
+                    <li>
+                           <a class="menu-item" href="{{ route('create.brands') }}" data-i18n="nav.dash.crypto">
+                                     {{ __('admin/sidebar.Create New Brand') }}
+                            </a>
                     </li>
                 </ul>
             </li>
 
 
-            <li class="nav-item"><a href=""><i class="la la-male"></i>
+            {{-- <li class="nav-item"><a href=""><i class="la la-male"></i>
                     <span class="menu-title" data-i18n="nav.dash.main">الطلاب  </span>
                     <span
                         class="badge badge badge-warning  badge-pill float-right mr-2"></span>
@@ -90,7 +74,7 @@
                             طالب </a>
                     </li>
                 </ul>
-            </li> --}}
+            </li>  --}}
 
 
             {{-- <li class="nav-item">

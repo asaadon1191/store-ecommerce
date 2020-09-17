@@ -60,6 +60,7 @@
                                                 <thead>
                                                 <tr>
                                                     <th> name</th>
+                                                    <th> Category</th>
                                                     <th>slug</th>
                                                     <th>status</th>
                                                     <th>photo</th>
@@ -71,6 +72,7 @@
                                                         @foreach ($mainCategories as $row)
                                                             <tr>
                                                                 <td> {{ $row->name }}</td>
+                                                                <td> {{ $row->CATEGORY->name }}</td>
                                                                 <td> {{ $row->slug }}</td>
                                                                 <td>
                                                                     {{ $row->Status() }}
