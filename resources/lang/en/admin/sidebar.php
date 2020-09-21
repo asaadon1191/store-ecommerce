@@ -16,4 +16,6 @@ return
     'Show All'                  => 'Show All',
     'Brands'                    => 'Brands',
     'Create New Brand'          => 'Create New Brand',
+    'Tags'                      => 'Tags',
+    'Create New Tag'            => 'Create New Tag',
 ];

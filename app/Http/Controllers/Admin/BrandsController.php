@@ -99,27 +99,59 @@ class BrandsController extends Controller
 
                 }else
                 {
-                    // return $request;
+                    
             // UPDATE ALL DATA
+            DB::beginTransaction();
                    $update = $brand->update($request->all());
 
                     $brand->name = $request->name;
                     $brand->save();
                     
             // UPDATE PHOTO 
-                if ($request->hasFile('photo')) 
-                {
-                    Storage::disk('public')->delete('/assets/admin/images/',$brand->photo);
-                    $photo =  $request->photo->store('brands','public');
-                    $brand->update(['photo' => $photo]);
+                    if ($request->hasFile('photo')) 
+                    {
+                        Storage::disk('public')->delete('/assets/admin/images/',$brand->photo);
+                        $photo =  $request->photo->store('brands','public');
+                        $brand->update(['photo' => $photo]);
+                    }
+
+            DB::commit();
+
+                        return \redirect()->route('brands')->with(['success' => 'Brand Updated successfaly']);
                 }
-                    return \redirect()->route('brands')->with(['success' => 'Brand Updated successfaly']);
-                }
+           
 
         } catch (\Throwable $th) 
         {
             $th;
+            DB::rollback();
             return \redirect()->route('brands')->with(['error' => 'Something Error Please Try Again Later']);
+        }
+    }
+
+    public function delete($id)
+    {
+        try 
+        {
+            // GET BRAND
+                $brand = Brand::find($id);
+
+                if (!$brand) 
+                {
+                    return \redirect()->back()->with(['error' =>'this brand not found']);
+
+                }else
+                {
+                    Storage::disk('public')->delete('/assets/admin/images/',$brand->photo);
+                    $brand->delete();
+                    return \redirect()->back()->with(['success' => 'This brand deleted succeessfally']);
+                }
+
+        } catch (\Throwable $th) 
+        {
+            return $th;
+            return \redirect()->route('brands')->with(['error' => 'Something Error Please Try Again Later']);
+
         }
     }
 

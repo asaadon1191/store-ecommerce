@@ -48,6 +48,7 @@ Route::group(['prefix' => LaravelLocalization::setLocale(),'middleware' => [ 'lo
             Route::get('delete/{id}','MainCategoriesController@delete')->name('delete.Categories');
             
         });
+
 //  SubCATEGORY ROUTS
         Route::prefix('SubCategory')->group(function()
         {
@@ -69,6 +70,18 @@ Route::group(['prefix' => LaravelLocalization::setLocale(),'middleware' => [ 'lo
             Route::get('edit/{id}','BrandsController@edit')->name('edit.brands');
             Route::put('update/{id}','BrandsController@update')->name('update.brands');
             Route::get('delete/{id}','BrandsController@delete')->name('delete.brands');
+        });
+    
+
+//  TAGS ROUTS
+        Route::prefix('Tag')->group(function()
+        {
+            Route::get('/','TagsController@index')->name('tags');
+            Route::get('/create','TagsController@create')->name('create.tags');
+            Route::post('/store','TagsController@store')->name('store.tags');
+            Route::get('edit/{id}','TagsController@edit')->name('edit.tags');
+            Route::put('update/{id}','TagsController@update')->name('update.tags');
+            Route::get('delete/{id}','TagsController@delete')->name('delete.tags');
         });
     });
 

@@ -49,7 +49,7 @@
                 <ul class="menu-content">
                     <li class="">
                            <a class="menu-item" href="{{ route('brands') }}" data-i18n="nav.dash.ecommerce"> 
-                                   عرض الكل 
+                            {{ __('admin/sidebar.Show All') }} 
                             </a>
                     </li>
                     <li>
@@ -61,20 +61,25 @@
             </li>
 
 
-            {{-- <li class="nav-item"><a href=""><i class="la la-male"></i>
-                    <span class="menu-title" data-i18n="nav.dash.main">الطلاب  </span>
-                    <span
-                        class="badge badge badge-warning  badge-pill float-right mr-2"></span>
+            <li class="nav-item"><a href=""><i class="la la-male"></i>
+                    <span class="menu-title" data-i18n="nav.dash.main">{{ __('admin/sidebar.Tags') }}  </span>
+                    <span class="badge badge badge-warning  badge-pill float-right mr-2">
+                            {{ App\Models\Tag::all()->count() }}
+                     </span>
                 </a>
                 <ul class="menu-content">
-                    <li class="active"><a class="menu-item" href=""
-                                          data-i18n="nav.dash.ecommerce"> عرض الكل </a>
+                    <li class="active"><a class="menu-item" href="{{ route('tags') }}" data-i18n="nav.dash.ecommerce">
+                             {{ __('admin/sidebar.Show All') }}
+                     </a>
                     </li>
-                    <li><a class="menu-item" href="" data-i18n="nav.dash.crypto">أضافة
-                            طالب </a>
+                    <li>
+                           <a class="menu-item" href="{{ route('create.tags') }}" data-i18n="nav.dash.crypto">
+
+                                    {{ __('admin/sidebar.Create New Tag') }}  
+                            </a>
                     </li>
                 </ul>
-            </li>  --}}
+            </li> 
 
 
             {{-- <li class="nav-item">

@@ -29,6 +29,10 @@ return
     'Brands'                    => 'البرندات',
     'Create New Brand'          => 'انشاء براند جديد',
 
+    // TAGS
+    'Tags'                      => 'العلامات Tags',
+    'Create New Tag'           => ' اضافة علامة جديدة ',
+
     // SETTING PAGE
 
     'Settings'                  => 'الاعدادات',
@@ -36,5 +40,6 @@ return
     'Free Shipping'             => 'توصيل مجاني',
     'Local Shipping'            => 'توصيل داخلي',
     'Global Shipping'           => 'توصيل خارجي',
+    
     // 'Shipping Method' => 'الاعدادات',
 ];
