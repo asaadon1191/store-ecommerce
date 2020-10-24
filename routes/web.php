@@ -19,7 +19,9 @@ Route::get('/', function () {
 
 
 Route::get('/test', function () {
-    return \App\Models\Setting::find(74);
+    $category =  \App\Models\Category::find(1);
+    $category->makeVisible('translations');
+    return $category;
 });
 
 

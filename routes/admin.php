@@ -40,9 +40,48 @@ Route::group(['prefix' => LaravelLocalization::setLocale(),'middleware' => [ 'lo
     //  CATEGORY ROUTS
         Route::prefix('category')->group(function()
         {
-            Route::get('edit','ProfileController@getProfile')->name('edit.profile');
-            Route::put('update','ProfileController@updateProfile')->name('update.profile');
+            Route::get('/','MainCategoriesController@index')->name('Categories');
+            Route::get('/create','MainCategoriesController@create')->name('create.Categories');
+            Route::post('/store','MainCategoriesController@store')->name('store.Categories');
+            Route::get('edit/{id}','MainCategoriesController@edit')->name('edit.Categories');
+            Route::put('update/{id}','MainCategoriesController@update')->name('update.Categories');
+            Route::get('delete/{id}','MainCategoriesController@delete')->name('delete.Categories');
             
+        });
+
+//  SubCATEGORY ROUTS
+        Route::prefix('SubCategory')->group(function()
+        {
+            Route::get('/','SubCategoryController@index')->name('SubCategory');
+            Route::get('/create','SubCategoryController@create')->name('create.SubCategory');
+            Route::post('/store','SubCategoryController@store')->name('store.SubCategory');
+            Route::get('edit/{id}','SubCategoryController@edit')->name('edit.SubCategory');
+            Route::put('update/{id}','SubCategoryController@update')->name('update.SubCategory');
+            Route::get('delete/{id}','SubCategoryController@delete')->name('delete.SubCategory');
+            
+        });
+        
+//  BRANDS ROUTS
+        Route::prefix('Brand')->group(function()
+        {
+            Route::get('/','BrandsController@index')->name('brands');
+            Route::get('/create','BrandsController@create')->name('create.brands');
+            Route::post('/store','BrandsController@store')->name('store.brands');
+            Route::get('edit/{id}','BrandsController@edit')->name('edit.brands');
+            Route::put('update/{id}','BrandsController@update')->name('update.brands');
+            Route::get('delete/{id}','BrandsController@delete')->name('delete.brands');
+        });
+    
+
+//  TAGS ROUTS
+        Route::prefix('Tag')->group(function()
+        {
+            Route::get('/','TagsController@index')->name('tags');
+            Route::get('/create','TagsController@create')->name('create.tags');
+            Route::post('/store','TagsController@store')->name('store.tags');
+            Route::get('edit/{id}','TagsController@edit')->name('edit.tags');
+            Route::put('update/{id}','TagsController@update')->name('update.tags');
+            Route::get('delete/{id}','TagsController@delete')->name('delete.tags');
         });
     });
 
