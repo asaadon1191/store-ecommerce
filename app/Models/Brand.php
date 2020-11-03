@@ -3,9 +3,10 @@
 namespace App\Models;
 
 
+use App\Models\Product;
+use App\Models\BrandTranslation;
 use Illuminate\Database\Eloquent\Model;
 use Astrotomic\Translatable\Translatable;
-use App\Models\BrandTranslation;
 
 
 class Brand extends Model
@@ -33,7 +34,7 @@ class Brand extends Model
     protected $casts = ['is_active' => 'boolean'];
 
 
-    //SCOPES
+//SCOPES
     
 
     public function Status()
@@ -41,9 +42,15 @@ class Brand extends Model
        return $this->is_active == 1 ? 'Active' : 'Not Active';
     }
 
-    // RELATIONS
+// RELATIONS
      public function BRAND()
      {
          return $this->hasOne(BrandTranslation::class);
      }
+
+    //  ONE TO MANY WITH PRODUCTS
+     public function products()
+    {
+        return $this->hasMany(Product::class);
+    }
 }

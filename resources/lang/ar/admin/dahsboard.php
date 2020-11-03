@@ -11,7 +11,7 @@ return
     'Order Number'          => 'رقم الطلب',
     'Total Prices'          => 'اجمالي السعر',
     'Order Status'          => 'حالة الطلب',
-    'Last Comments'         => 'Last Comments',
+    'Last Comments'         => 'اخر التعليقات',
     'Product Name'          => 'اسم المنتج',
     'Rate'                  => 'التقيم',
     'Client'                => 'العميل',

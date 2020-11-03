@@ -62,9 +62,9 @@
 
                                         
 
-                                        <div class="text-center">
+                                        {{-- <div class="text-center">
                                             <img src="" alt="" style="height: 100px; width:100px">
-                                        </div>
+                                        </div> --}}
 
                                         <div class="form-body">
 

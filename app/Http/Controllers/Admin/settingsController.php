@@ -58,7 +58,7 @@ class settingsController extends Controller
         } 
         catch (\Throwable $th) 
         {
-            return $th;
+            // return $th;
             return \redirect()->back()->with(['error' => 'هناك خطا ما برجاء المحاولة فيما بعد']);
             DB::rollback();
             

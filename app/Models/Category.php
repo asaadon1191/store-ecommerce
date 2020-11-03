@@ -2,6 +2,7 @@
 
 namespace App\Models;
 
+use App\Models\Product;
 use Illuminate\Database\Eloquent\Model;
 use Astrotomic\Translatable\Translatable;
 
@@ -51,5 +52,11 @@ class Category extends Model
      {
         return $this->belongsTo(self::class,'parent_id');
      }
+
+    //  MANY TO MANY WITH PRODUCT MODEL
+     public function products()
+    {
+        return $this->belongsToMany(Product::class);
+    }
 
 }

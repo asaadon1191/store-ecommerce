@@ -14,10 +14,10 @@
                         <div class="row breadcrumbs-top">
                             <div class="breadcrumb-wrapper col-12">
                                 <ol class="breadcrumb">
-                                    <li class="breadcrumb-item"><a href="{{ route('Categories') }}">الرئيسية</a>
+                                    <li class="breadcrumb-item"><a href="{{ route('Categories') }}">{{ __('admin/categories.DashBoard') }}</a>
                                     </li>
                                     <li class="breadcrumb-item active"> <a href="{{ route('Categories') }}">
-                                        Categories
+                                        {{ __('admin/categories.Categories') }}
                                     </a>
                                     </li>
                                 </ol>
@@ -25,6 +25,7 @@
                         </div>
                     </div>
                 </div>
+
                 <div class="content-body">
                     <!-- DOM - jQuery events table -->
                     <section id="dom">
@@ -51,18 +52,21 @@
                                     @include('admin.alerts.errors')
                                     @include('admin.alerts.success')
                                     <!-- end alet section-->
+
+
                                     <div class="card-content collapse show">
                                         @if($mainCategories && $mainCategories->count() > 0)
 
                                             <div class="card-body card-dashboard">
                                                 <table
-                                                    class="table display nowrap table-striped table-bordered ">
+                                                    class="table display nowrap table-striped table-bordered scroll-horizontal">
                                                     <thead>
                                                     <tr>
-                                                        <th> name</th>
-                                                        <th>slug</th>
-                                                        <th>status</th>
-                                                        <th>photo</th>
+                                                        <th> {{ __('admin/categories.Category Name') }}</th>
+                                                        <th>{{ __('admin/categories.Slug Name') }}</th>
+                                                        <th>{{ __('admin/categories.Category Photo') }}</th>
+                                                        <th>{{ __('admin/categories.Category Status') }}</th>
+                                                      
                                                         <th>الإجراءات</th>
                                                     </tr>
                                                     </thead>
@@ -96,7 +100,7 @@
                                                             @endforeach
                                                         @endisset
                                                         
-                                                        {{ $mainCategories->links() }}
+                                                        {{--  {{ $mainCategories->links() }}  --}}
                                                     </tbody>
                                                 </table>
                                                 <div class="justify-content-center d-flex">

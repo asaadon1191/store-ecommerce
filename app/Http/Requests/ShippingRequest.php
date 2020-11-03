@@ -35,10 +35,10 @@ class ShippingRequest extends FormRequest
     {
         return
         [
-            'id.required'               => 'هذا الحقل مطلوب',
-            'value.required'            => 'هذا الحقل مطلوبا',
-            'id.exists'                 => 'هذه القيمة موجودة من قبل',
-            'plain_value.numeric'       => 'هذه القيمة يجب ان تحتوي علي ارقام فقط',
+            'id.required'               => __('admin/shippingMethods.id required'),
+            'value.required'            =>  __('admin/shippingMethods.value required'),
+            'id.exists'                 => __('admin/shippingMethods.id exists'),
+            'plain_value.numeric'       =>  __('admin/shippingMethods.plain_value numeric'),
         ];
     }
 }

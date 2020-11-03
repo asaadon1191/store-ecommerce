@@ -34,9 +34,9 @@ class AdminLoginRequest extends FormRequest
     {
         return
         [
-            'email.required'    => 'يجب ادخال الايميل',
-            'email.email'       => 'يجب ادخال الايميل بصيغة ايميل ',
-            'password.required' => 'يجب ادخال الباسورد',
+            'email.required'    => __('admin/login.email required'),
+            'email.email'       => __('admin/login.email email'),
+            'password.required' => __('admin/login.password required'),
         ];
     }
 }
