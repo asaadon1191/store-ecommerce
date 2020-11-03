@@ -78,7 +78,7 @@
                                                                     {{ $row->Status() }}
                                                                 </td>
                                                                 <td>
-                                                                    <img src="{{ asset('assets/images/' ) }} " style="height: 100px; width:100px;">
+                                                                    <img src="{{ asset('assets/images/') }} " style="height: 100px; width:100px;">
                                                                 </td>
                                                                 
                                                                 <td>

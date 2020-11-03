@@ -147,6 +147,7 @@
                                             <td>10583.4</td>
                                             <td><i class="cc BTC-alt"></i> 0.45000000</td>
                                             <td>$ 4762.53</td>
+                                            <td> مكتمل</td>
                                         </tr>
                                     </tbody>
                                 </table>

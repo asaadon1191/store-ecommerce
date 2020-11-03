@@ -83,6 +83,17 @@ Route::group(['prefix' => LaravelLocalization::setLocale(),'middleware' => [ 'lo
             Route::put('update/{id}','TagsController@update')->name('update.tags');
             Route::get('delete/{id}','TagsController@delete')->name('delete.tags');
         });
+
+//  PRODUCTS ROUTS
+        Route::prefix('Product')->group(function()
+        {
+            Route::get('/','ProductsController@index')->name('products');
+            Route::get('/create','ProductsController@create')->name('create.products');
+            Route::post('/store','ProductsController@store')->name('store.products');
+            Route::get('edit/{id}','ProductsController@edit')->name('edit.products');
+            Route::put('update/{id}','ProductsController@update')->name('update.products');
+            Route::get('delete/{id}','ProductsController@delete')->name('delete.products');
+        });
     });
 
     // #####################################################################################################

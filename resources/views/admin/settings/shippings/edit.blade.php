@@ -12,11 +12,11 @@
                 <div class="row breadcrumbs-top">
                     <div class="breadcrumb-wrapper col-12">
                         <ol class="breadcrumb">
-                            <li class="breadcrumb-item"><a href="">الاعدادات </a>
+                            <li class="breadcrumb-item"><a href="#">{{ __('admin/shippingMethods.settings') }} </a>
                             </li>
-                            <li class="breadcrumb-item"><a href="">وسائل التوصيل </a>
+                            <li class="breadcrumb-item"><a href="">{{ __('admin/shippingMethods.shipping methods') }}  </a>
                             </li>
-                            <li class="breadcrumb-item active">تعديل وسيلة توصيل
+                            <li class="breadcrumb-item active">{{ __('admin/shippingMethods.edit shipping methods') }}
                             </li>
                         </ol>
                     </div>
@@ -30,7 +30,7 @@
                     <div class="col-md-12">
                         <div class="card">
                             <div class="card-header">
-                                <h4 class="card-title" id="basic-layout-form"> تعديل  متجر </h4>
+                                <h4 class="card-title" id="basic-layout-form">{{ __('admin/shippingMethods.edit shipping methods') }} </h4>
                                 <a class="heading-elements-toggle"><i
                                         class="la la-ellipsis-v font-medium-3"></i></a>
                                 <div class="heading-elements">
@@ -71,13 +71,13 @@
                                         <input type="hidden" name="id" value="{{ $data->id }}">
                                         <div class="form-body">
 
-                                            <h4 class="form-section"><i class="ft-home"></i> بيانات وسيلة التوصيل </h4>
+                                            <h4 class="form-section"><i class="ft-home"></i>{{ __('admin/shippingMethods.shipping methods detailes') }}  </h4>
 
 
                                                 <div class="row">
                                                     <div class="col-md-6">
                                                         <div class="form-group">
-                                                            <label for="projectinput1"> الاسم </label>
+                                                            <label for="projectinput1"> {{ __('admin/shippingMethods.shipping method name') }}  </label>
                                                             <input type="text" value="{{ $data->value }}" id="name"
                                                                 class="form-control"
                                                                 name="value">
@@ -88,15 +88,15 @@
                                                     </div>
                                                     <div class="col-md-6 ">
                                                         <div class="form-group">
-                                                            <label for="projectinput1"> قيمة التوصيل  </label>
+                                                            <label for="projectinput1"> {{ __('admin/shippingMethods.shipping method cost') }} </label>
                                                             <input type="number" id="pac-input"
                                                                    class="form-control"
                                                                    name="plain_value"
                                                                    value="{{ $data->plain_value }}"
                                                             >
     
-                                                            @error("value")
-                                                            <span class="text-danger"> {{$message}}</span>
+                                                            @error('plain_value')
+                                                                <span class="text-danger"> {{$message}}</span>
                                                             @enderror
                                                         </div>
                                                     </div>
@@ -106,10 +106,10 @@
                                             <div class="form-actions">
                                                 <button type="button" class="btn btn-warning mr-1"
                                                         onclick="history.back();">
-                                                    <i class="ft-x"></i> تراجع
+                                                    <i class="ft-x"></i> {{ __('admin/shippingMethods.back') }}
                                                 </button>
                                                 <button type="submit" class="btn btn-primary">
-                                                    <i class="la la-check-square-o"></i> حفظ
+                                                    <i class="la la-check-square-o"></i> {{ __('admin/shippingMethods.update') }}
                                                 </button>
                                             </div>
                                         </div>

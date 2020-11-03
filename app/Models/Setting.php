@@ -5,7 +5,7 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Model;
 use Astrotomic\Translatable\Translatable;
 
-class Setting extends Model
+class Setting extends Model 
 {
     use Translatable;
     //TO CALL TRANSLATIONS DATA WITH REQUEST

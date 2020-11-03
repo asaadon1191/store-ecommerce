@@ -1,16 +1,16 @@
 <?php
 
-return
+return 
 [
-    'Brands'                    => 'Brands',
-    'Create New Brand'          => 'Create New Brand',
+    'Tags'                      => 'Tags',
     'Name'                      => 'Name',
+    'Slug'                      => 'Tag Slug',
     'Status'                    => 'Status',
-    'Photo'                     => 'Photo',
+
+
 
 
     'DashBoard'                 => 'DashBoard',
-    'Categories'                => 'Categories',
     'Update'                    => 'Update',
     'Delete'                    => 'Delete',
     'Controles'                 => 'Controles',

@@ -1,6 +1,6 @@
 @extends('layouts.admin')
 @section('title')
-   Tags
+{{ __('admin/tags.Tags') }}
 @endsection
 @section('content')
 
@@ -9,13 +9,13 @@
         <div class="content-wrapper">
             <div class="content-header row">
                 <div class="content-header-left col-md-6 col-12 mb-2">
-                    <h3 class="content-header-title"> الاقسام الرئيسية </h3>
+                    <h3 class="content-header-title"> ا{{ __('admin/tags.Tags') }}</h3>
                     <div class="row breadcrumbs-top">
                         <div class="breadcrumb-wrapper col-12">
                             <ol class="breadcrumb">
-                                <li class="breadcrumb-item"><a href="{{route('create.brands')}}">الرئيسية</a>
+                                <li class="breadcrumb-item"><a href="{{route('create.brands')}}">{{ __('admin/tags.DashBoard') }}</a>
                                 </li>
-                                <li class="breadcrumb-item active"> الاقسام الرئيسية
+                                <li class="breadcrumb-item active"> {{ __('admin/tags.Tags') }}
                                 </li>
                             </ol>
                         </div>
@@ -30,7 +30,7 @@
                             <div class="col-12">
                                 <div class="card">
                                     <div class="card-header">
-                                        <h4 class="card-title">جميع الاقسام الرئيسية </h4>
+                                        
                                         <a class="heading-elements-toggle"><i
                                                 class="la la-ellipsis-v font-medium-3"></i></a>
                                         <div class="heading-elements">
@@ -52,9 +52,9 @@
                                                 class="table display nowrap table-striped table-bordered scroll-horizontal">
                                                 <thead class="">
                                                 <tr>
-                                                    <th>الاسم </th>
-                                                    <th>اسم الرابط</th>
-                                                    <th>الإجراءات</th>
+                                                    <th>{{ __('admin/tags.Name') }} </th>
+                                                    <th> {{ __('admin/tags.Slug') }}</th>
+                                                    <th>{{ __('admin/tags.Controles') }}</th>
                                                 </tr>
                                                 </thead>
                                                 <tbody>
@@ -68,11 +68,11 @@
                                                                 <div class="btn-group" role="group"
                                                                     aria-label="Basic example">
                                                                     <a href="{{route('edit.tags',$tag -> id)}}"
-                                                                    class="btn btn-outline-primary btn-min-width box-shadow-3 mr-1 mb-1">تعديل</a>
+                                                                    class="btn btn-outline-primary btn-min-width box-shadow-3 mr-1 mb-1">{{ __('admin/tags.Update') }}</a>
 
 
                                                                     <a href="{{route('delete.tags',$tag -> id)}}"
-                                                                    class="btn btn-outline-danger btn-min-width box-shadow-3 mr-1 mb-1">حذف</a>
+                                                                    class="btn btn-outline-danger btn-min-width box-shadow-3 mr-1 mb-1">{{ __('admin/tags.Delete') }}</a>
 
 
 
