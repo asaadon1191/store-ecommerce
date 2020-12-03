@@ -21,6 +21,19 @@ class Tag extends Model
         'slug'
     ];
 
+
+// SCOPES
+
+    public function scopeActive($qry)
+    {
+        return $qry->where('is_active',1);
+    }
+
+    public function scopeSelect($qry)
+    {
+        return $qry->select('id','name');
+    }
+
 // RELATIONS
 
    public function TAG()

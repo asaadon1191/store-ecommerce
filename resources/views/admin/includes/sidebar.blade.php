@@ -82,6 +82,27 @@
             </li> 
 
 
+            <li class="nav-item"><a href=""><i class="la la-male"></i>
+                    <span class="menu-title" data-i18n="nav.dash.main">{{ __('admin/sidebar.Products') }}  </span>
+                    <span class="badge badge badge-warning  badge-pill float-right mr-2">
+                            {{ App\Models\Product::all()->count() }}
+                     </span>
+                </a>
+                <ul class="menu-content">
+                    <li class="active"><a class="menu-item" href="{{ route('products') }}" data-i18n="nav.dash.ecommerce">
+                             {{ __('admin/sidebar.Show All') }}
+                     </a>
+                    </li>
+                    <li>
+                           <a class="menu-item" href="{{ route('create.products') }}" data-i18n="nav.dash.crypto">
+
+                                    {{ __('admin/sidebar.Create new product') }}  
+                            </a>
+                    </li>
+                </ul>
+            </li> 
+
+
             {{-- <li class="nav-item">
                 <a href=""><i class="la la-male"></i>
                     <span class="menu-title" data-i18n="nav.dash.main">تذاكر المراسلات   </span>

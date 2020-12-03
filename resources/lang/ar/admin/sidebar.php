@@ -40,6 +40,9 @@ return
     'Free Shipping'             => 'توصيل مجاني',
     'Local Shipping'            => 'توصيل داخلي',
     'Global Shipping'           => 'توصيل خارجي',
+
+    'Products' => 'المنتجات',
+    'Create new product' => 'اضافة منتج جديد',
     
     // 'Shipping Method' => 'الاعدادات',
 ];

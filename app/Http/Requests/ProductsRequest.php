@@ -13,7 +13,7 @@ class ProductsRequest extends FormRequest
      */
     public function authorize()
     {
-        return false;
+        return true;
     }
 
     /**
@@ -23,8 +23,16 @@ class ProductsRequest extends FormRequest
      */
     public function rules()
     {
-        return [
-            //
+        return 
+        [
+            'name'                  => 'required|max:100',
+            'slug'                  => 'required|unique:products,slug,'.$this->id,
+            'description'           => 'required|max:1000',
+            'short_description'     => 'max:400|nullable',
+            'categories'            => 'array|min:1',
+            'categories.*'          => 'numeric|exists:categories,id',
+            'tags'                  => 'nullable',
+            'brand_id'              => 'required|exists:brands,id'
         ];
     }
 }
