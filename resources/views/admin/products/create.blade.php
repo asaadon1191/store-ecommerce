@@ -155,12 +155,10 @@
                                                     </div>
                                                 </div>
 
-                                               
-
                                                 <div class="col-md-6">
                                                     <div class="form-group">
                                                         <label> {{ __('admin/products.Describtion') }} </label>
-                                                        <textarea name="description" id="" cols="30" rows="5" class="form-control">
+                                                        <textarea name="description" id="" cols="30" rows="5" class="form-control" contenteditable="true">
 
                                                         </textarea>
                                                         @error("description")
