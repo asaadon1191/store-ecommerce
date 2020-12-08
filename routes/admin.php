@@ -90,6 +90,11 @@ Route::group(['prefix' => LaravelLocalization::setLocale(),'middleware' => [ 'lo
             Route::get('/','ProductsController@index')->name('products');
             Route::get('/create','ProductsController@create')->name('create.products');
             Route::post('/store','ProductsController@store')->name('store.products');
+
+            Route::post('/store_prices','ProductsController@store_prices')->name('store_prices.products');
+            Route::post('/store_inv','ProductsController@store_inv')->name('store_inv.products');
+            Route::post('/store_image','ProductsController@store_image')->name('store_image.products');
+            
             Route::get('edit/{id}','ProductsController@edit')->name('edit.products');
             Route::put('update/{id}','ProductsController@update')->name('update.products');
             Route::get('delete/{id}','ProductsController@delete')->name('delete.products');

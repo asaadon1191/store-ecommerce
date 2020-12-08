@@ -64,6 +64,11 @@ class Product extends Model
      */
     protected $translatedAttributes = ['name', 'description', 'short_description'];
 
+    public function Status()
+    {
+       return $this->is_active == 1 ? 'Active' : 'Not Active';
+    }
+
     public function brand()
     {
         return $this->belongsTo(Brand::class)->withDefault();
