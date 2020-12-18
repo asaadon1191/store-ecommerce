@@ -36,7 +36,7 @@
                     <li><a class="menu-item" href="{{ route('create.SubCategory') }}" data-i18n="nav.dash.crypto">{{ __('admin/sidebar.Create New Sub Category') }}  </a>      
                     </li>
                 </ul>
-            </li>
+              </li>
 
        
 
@@ -68,7 +68,7 @@
                      </span>
                 </a>
                 <ul class="menu-content">
-                    <li class="active"><a class="menu-item" href="{{ route('tags') }}" data-i18n="nav.dash.ecommerce">
+                    <li class=""><a class="menu-item" href="{{ route('tags') }}" data-i18n="nav.dash.ecommerce">
                              {{ __('admin/sidebar.Show All') }}
                      </a>
                     </li>
@@ -89,7 +89,7 @@
                      </span>
                 </a>
                 <ul class="menu-content">
-                    <li class="active"><a class="menu-item" href="{{ route('products') }}" data-i18n="nav.dash.ecommerce">
+                    <li class=""><a class="menu-item" href="{{ route('products') }}" data-i18n="nav.dash.ecommerce">
                              {{ __('admin/sidebar.Show All') }}
                      </a>
                     </li>
@@ -97,6 +97,26 @@
                            <a class="menu-item" href="{{ route('create.products') }}" data-i18n="nav.dash.crypto">
 
                                     {{ __('admin/sidebar.Create new product') }}  
+                            </a>
+                    </li>
+                </ul>
+            </li> 
+
+            <li class="nav-item"><a href=""><i class="la la-male"></i>
+                    <span class="menu-title" data-i18n="nav.dash.main">{{ __('admin/attributes.Attributes') }}  </span>
+                    <span class="badge badge badge-warning  badge-pill float-right mr-2">
+                            {{ App\Models\Product::all()->count() }}
+                     </span>
+                </a>
+                <ul class="menu-content">
+                    <li class=""><a class="menu-item" href="{{ route('attributes') }}" data-i18n="nav.dash.ecommerce">
+                             {{ __('admin/sidebar.Show All') }}
+                     </a>
+                    </li>
+                    <li>
+                           <a class="menu-item" href="{{ route('create.attributeds') }}" data-i18n="nav.dash.crypto">
+
+                                    {{ __('admin/attributes.Create new Attripute') }}  
                             </a>
                     </li>
                 </ul>

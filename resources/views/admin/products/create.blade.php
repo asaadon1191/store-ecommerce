@@ -78,7 +78,7 @@
                                     <div class="form">
                                         <div class="header" class="general">
                                             <div class="row">
-                                                <div onclick="swap(this);" data-tab="general" class="general-tab col-md-3">
+                                                <div onclick="swap(this);" data-tab="general" class="general-tab col-md-3" >
                                                     General
                                                 </div>
     
@@ -441,7 +441,7 @@
                                             </form>
 
                                         {{--  IMAGES FORM  --}}
-                                            <form class="form-image" action="{{ route('store_image.products') }}"
+                                            <form class="form-image" action="{{ route('store_image.products',$products->id) }}"
                                                 method="post" enctype="multipart/form-data">
                                                 @csrf 
 
@@ -454,7 +454,12 @@
                                                         </div>
                                                         <br><br>
                                                     </div>
-                                                    
+                                                    <div>
+                                                        <input type="file" name="subImages[]" multiple accept="image/*" class="form-control" id="uploader">
+                                                        <div id ="img_list" class="img_list">
+
+                                                        </div>
+                                                    </div>                                                    
                                                 
                                                     <div class="form-actions">
                                                         <button type="button" class="btn btn-warning mr-1"
@@ -482,18 +487,72 @@
 
 @section('script')
     <script>
-       $(document).ready(function()
+      
+
+      $('#uploader').change(function (e)
+      {
+        for (var i = 0; i < e.target.files.length; i++ ){
+            console.log(e.target.files[i]);
+
+        var tmppath = URL.createObjectURL(e.target.files[i]);
+        $('#img_list').append("<img src='"+tmppath+"'>");
+        }
+        
+        //GET IMAGES DATA
+        var da = Array.from(document.querySelectorAll('.img_list img'));
+
+        //GET ARRAY COUNT
+        //var imagesCount = $(da).length;
+        var imagesCount = e.target.files.length;
+
+        // SET CURRENT INDEX OF ARRAY TO START
+        var index = 1;
+
+       
+        //CREATE LIST IMAGES AND BUTTONS  BASED ON IMAGES COUNT 
+        for(var i = 1; i <=imagesCount; i++)
+        {
+            console.log(i);
+            // CREATE DIV ELEMENT
+            var divElement = document.createElement('div');
+
+            // SET ATTR DATA INDEX IN DIV ELEMENT 
+            var dataIndex = divElement.setAttribute('dataIndex', i);
+
+
+            // APPEND CHILED ELEMENTS TO THIS DIV
+            var imgElement = divElement.appendChild(document.createElement('img'));
+
+            
+
+            // SET IMG ATTR SRC
+            var tmppath = URL.createObjectURL(e.target.files[i]);
+            //console.log(tmppath)
+            var setSrcAttr = imgElement.setAttribute('src',tmppath);
+
+            //APPEND DIV ELEMENT TO IMG_LIST ELEMENT
+            $('#img_list').append(divElement);
+
+            
+        }
+        
+     });
+
+    
+    {{--  var imeg = Array.from(document.querySelectorAll('.img_list button'));
+    console.table(imeg);  --}}
+           
+
+
+       $(".general-tab").click(function()
        {
-            $(".general-tab").click(function()
-            {
-                $(".form-general").show();
-                $(".form-price").hide();
-                $(".form-image").hide();
-                $(".form-inv").hide();
-                $(".general-tab").addClass("active");
-                $(".price-tab").removeClass("active");
-                $(".inventory-tab").removeClass("active");
-            });
+           $(".form-general").show();
+           $(".form-price").hide();
+           $(".form-image").hide();
+           $(".form-inv").hide();
+           $(".general-tab").addClass("active");
+           $(".price-tab").removeClass("active");
+           $(".inventory-tab").removeClass("active");
        });
 
         $(".price-tab").click(function()
@@ -545,58 +604,6 @@
         });
 
        
-        var uploadedDocumentMap = {}
-        Dropzone.options.dpzMultipleFiles = {
-            paramName: "ali", // The name that will be used to transfer the file
-            //autoProcessQueue: false,
-            maxFilesize: 5, // MB
-            clickable: true,
-            addRemoveLinks: true,
-            acceptedFiles: 'image/*',
-            dictFallbackMessage: " المتصفح الخاص بكم لا يدعم خاصيه تعدد الصوره والسحب والافلات ",
-            dictInvalidFileType: "لايمكنك رفع هذا النوع من الملفات ",
-            dictCancelUpload: "الغاء الرفع ",
-            dictCancelUploadConfirmation: " هل انت متاكد من الغاء رفع الملفات ؟ ",
-            dictRemoveFile: "حذف الصوره",
-            dictMaxFilesExceeded: "لايمكنك رفع عدد اكثر من هضا ",
-            headers: {
-                'X-CSRF-TOKEN':
-                    "{{ csrf_token() }}"
-            }
-
-            ,
-            url: "{{ route('store_image.products') }}", // Set the url
-            success:
-                    function (file, response) {
-                        $('form').append('<input type="file" name="document[]" value="' + response.name + '">')
-                        uploadedDocumentMap[file.name] = response.name
-                    }
-            ,
-            removedfile: function (file) {
-                file.previewElement.remove()
-                var name = ''
-                if (typeof file.file_name !== 'undefined') {
-                    name = file.file_name
-                } else {
-                    name = uploadedDocumentMap[file.name]
-                }
-                $('.form-image').find('input[name="document[]"][value="' + name + '"]').remove()
-            }
-            ,
-            // previewsContainer: "#dpz-btn-select-files", // Define the container to display the previews
-            init: function () {
-
-                    @if(isset($event) && $event->document)
-                var files =
-                {!! json_encode($event->document) !!}
-                    for (var i in files) {
-                    var file = files[i]
-                    this.options.addedfile.call(this, file)
-                    file.previewElement.classList.add('dz-complete')
-                    $('.form-image').append('<input type="hidden" name="document[]" value="' + file.file_name + '">')
-                }
-                @endif
-            }
-        }
+        
     </script>
 @endsection

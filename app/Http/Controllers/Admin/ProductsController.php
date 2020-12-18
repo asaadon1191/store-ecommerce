@@ -6,6 +6,7 @@ use App\Models\Tag;
 use App\Models\Brand;
 use App\Models\Product;
 use App\Models\Category;
+use App\Models\ProductImage;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use App\Http\Controllers\Controller;
@@ -26,7 +27,9 @@ class ProductsController extends Controller
         $brands     = Brand::active()->get();
         $categories = Category::active()->get();
         $tags       = Tag::get();
-        return \view('admin.products.create',\compact('brands','tags','categories'));
+        $products   = Product::all()->last();
+        // return $products; 
+        return \view('admin.products.create',\compact('brands','tags','categories','products'));
     }
 
     public function store(ProductsRequest $request)
@@ -141,17 +144,30 @@ class ProductsController extends Controller
         }     
     }
 
-    public function store_image(Request $request)
+    public function store_image(Request $request,$id)
     {
-        // return $request;
+        
+        // GET PRODUCT ID
+        $proId = Product::latest()->first()->id;
+       
+    
+        // CHECK IF SUB IMAGES IS FOUND
+        if ($request->hasFile('proImages')) 
+        {
+            $IMAGES = $request->proImages;
 
-        $file = $request->file("ali");
-        return $file;
-        $filename = uploadImage('products', $file);
-
-        return response()->json([
-            'name' => $filename,
-            'original_name' => $file->getClientOriginalName(),
-        ]);
+            foreach($IMAGES as $proPhotos)
+            { 
+                // dd($proPhotos);
+                $create = ProductImage::create(
+                    [
+                        'photo'             => $proPhotos->store('productPhotos','public'),
+                         'product_id'       => $proId
+                    ]);
+                    
+                    
+            }  
+            return redirect()->back();
+        }
     }
 }

@@ -27,7 +27,7 @@ class BrandsController extends Controller
     {
         try 
         {
-           
+        //    \dd($request->photo);
             // GET BRAND STATUS
                 if (!$request->is_active) 
                 {
