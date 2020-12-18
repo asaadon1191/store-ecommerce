@@ -18,4 +18,6 @@ return
     'Create New Brand'          => 'Create New Brand',
     'Tags'                      => 'Tags',
     'Create New Tag'            => 'Create New Tag',
+    'Products' => 'Products',
+    'Create new product' => 'Create New Product'
 ];

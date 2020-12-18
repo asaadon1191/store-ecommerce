@@ -39,9 +39,9 @@ class SubCategoryController extends Controller
             }
 
             DB::beginTransaction();
-                $category = Category::create($request->all());
-                $category->name = $request->name;
-                $category->parent_id = $request->mainCategory;
+                $category               = Category::create($request->all());
+                $category->name         = $request->name;
+                $category->parent_id    = $request->mainCategory;
                 $category->save();
             DB::commit();
             // return $request;
@@ -49,6 +49,8 @@ class SubCategoryController extends Controller
 
         } catch (\Throwable $th) 
         {
+            
+            DB::rollback();
             return $th;
             return \redirect()->route('SubCategory')->with(['error','هناك خطا ما براجاء المحاولة فيما بعد']);
 

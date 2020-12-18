@@ -9,6 +9,7 @@ use App\Http\Requests\AdminLoginRequest;
 
 class LoginController extends Controller
 {
+    
     public function loginForm()
     {
         return \view('admin.auth.login');
@@ -28,9 +29,5 @@ class LoginController extends Controller
     }
 
 
-    public function logout()
-    {
-        \auth('admin')->logout();
-        return \redirect()->route('admin.login');
-    }
+    
 }
